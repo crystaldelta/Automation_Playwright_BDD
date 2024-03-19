@@ -7,7 +7,7 @@ let browser: Browser
 let context: BrowserContext
 
 BeforeAll (async function () {
-    browser = await chromium.launch({headless: false, args:['--window-size = 1920,1040']})
+    browser = await chromium.launch({headless: false})
     console.log ('Browser Launched');
 });
 
@@ -17,9 +17,9 @@ Before (async function () {
     fixture.page = page;
 });
 
-After (async function ({pickle, result}) {
+After (async function ({result}) {
     if (result?.status == 'FAILED') {
-    const img = await fixture.page.screenshot({path : `./failure-screenshots/ ${pickle.name}`, type : 'png'});
+    const img = await fixture.page.screenshot({type : 'png'});
     await this.attach (img, "image/png");
 }
     await fixture.page.close();

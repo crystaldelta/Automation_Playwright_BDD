@@ -7,7 +7,7 @@ export const loginPage = {
 
     ayo_username: '//div[contains(@class, "input-box")]//child::label[text() = "Username"]//following-sibling::input[@id = "email"]',
     ayo_password: '//div[contains(@class, "input-box")]//child::label[text() = "Password"]//following-sibling::input[@id = "password"]',
-    ayo_logiBtn: '//button[@id="submit"]',
+    ayo_logiBtn: '//button[@id="submi"]',
 
     ayo_forgotPassword: '//div[contains(@class, "forgot-pwd")]//child::a[@id= "forgot-password-link"]',
     ayo_resetPassword_header: '//div[@class= "password-reset-content"]//child::h2[text() = "Password reset"]',
