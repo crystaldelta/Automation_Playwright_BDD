@@ -53,7 +53,7 @@ export default class PlaywrightWrapper {
 
     //assertions
     async elementIsVisible (locator: string) {
-        const element = await this.page.locator(locator);
+        const element = this.page.locator(locator);
         await expect(element).toBeVisible();
     };
 

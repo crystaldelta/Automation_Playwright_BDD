@@ -3,17 +3,16 @@
         "formatOptions": {
             "snippetInterface": "async-await"
         }, 
-        "dryRun": false,
+        "dryRun": true,
         "paths": [
-            "src/tests/features/"
+            "src/features/"
         ],
         "require": [
-            "src/tests/steps/*.ts"
+            "src/stepDefinition.ts",
+            "src/support/hooks.ts"
         ],
         "requireModule": [
             "ts-node/register"
-        ],
-        "parallel": 2,
-        "trace": ["retain-on-failure"]
+        ]
     }
 }
