@@ -1,12 +1,12 @@
 import { Page } from "@playwright/test";
-import reusables from "../../utils/utility";
 import { loginCreds as data}  from "../../utils/testData";
 import { loginPage } from "../../pageObject/ayo_pageObject/loginPage";
+import PlaywrightWrapper from "../../utils/utility";
 //=======================================================================================================================
 
 export default class login {
-    private utility: reusables;
-    constructor(private page: Page) { this.utility = new reusables(page) }
+    private utility: PlaywrightWrapper;
+    constructor(private page: Page) { this.utility = new PlaywrightWrapper(page) }
 
     async navigateToLoginPage(userType: string) {
         if (userType == "ayo_staffUser") {
