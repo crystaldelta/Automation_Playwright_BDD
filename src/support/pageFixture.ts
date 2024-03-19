@@ -1,5 +1,5 @@
 import { Page } from "@playwright/test"
-export const pageFixture = {
+export const fixture = {
 // @ts-ignore
 page : undefined as Page
 }

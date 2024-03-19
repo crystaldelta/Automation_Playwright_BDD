@@ -1,6 +1,6 @@
 import {Page, expect} from "@playwright/test"
 
-export default class PlaywrightWrapper {
+export default class reusables {
 
     constructor(private page : Page) { }
 

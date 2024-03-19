@@ -2,13 +2,13 @@
     "default": {
         "formatOptions": {
             "snippetInterface": "async-await"
-        }, 
-        "dryRun": true,
+        },
+        "dryRun": false,
         "paths": [
             "src/features/"
         ],
         "require": [
-            "src/stepDefinition.ts",
+            "src/stepDefinition/ayo_stepDefinition/*.ts",
             "src/support/hooks.ts"
         ],
         "requireModule": [
