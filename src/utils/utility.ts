@@ -1,7 +1,7 @@
 import {Page, expect} from "@playwright/test"
 import {fixture} from "../support/pageFixture"
 
-export default class PlaywrightWrapper {
+export default class resuables {
 
     constructor(private page : Page) { }
 
