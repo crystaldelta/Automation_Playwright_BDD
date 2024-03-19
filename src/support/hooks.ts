@@ -7,7 +7,7 @@ let browser: Browser
 let context: BrowserContext
 
 BeforeAll (async function () {
-    browser = await chromium.launch({headless: false})
+    browser = await chromium.launch({headless: false, args:['--window-size = 1920,1040']})
     console.log ('Browser Launched');
 });
 
