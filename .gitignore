@@ -3,9 +3,8 @@ node_modules/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
-/test-results/
-/playwright-report/
 /blob-report/
-/playwright/.cache/
 /index.html
 /package-lock.json
+assets
+features

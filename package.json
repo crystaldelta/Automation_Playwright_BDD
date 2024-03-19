@@ -1,14 +1,13 @@
 {
-  "name": "playwright_automation",
+  "name": "xened-automation",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test:login": "cucumber-js --tags @login",
-    "posttest": "npx ts-node src/test-report/report.ts"
+    "test:htmlReport": "ts-node src/report/report.ts"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Sivakumar",
   "license": "ISC",
   "devDependencies": {
     "@cucumber/cucumber": "^10.3.1",
@@ -16,5 +15,8 @@
     "@types/node": "^20.11.19",
     "multiple-cucumber-html-reporter": "^3.6.2",
     "ts-node": "^10.9.2"
+  },
+  "dependencies": {
+    "winston": "^3.12.0"
   }
 }

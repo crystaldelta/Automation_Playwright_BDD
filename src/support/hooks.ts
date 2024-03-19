@@ -1,6 +1,7 @@
 import {BeforeAll, Before, After, AfterAll, setDefaultTimeout} from "@cucumber/cucumber"
 import {chromium, Browser, BrowserContext} from "@playwright/test"
 import { fixture } from "./pageFixture"
+import { Logger } from "winston"
 setDefaultTimeout(60 * 1000 * 2)
 
 let browser: Browser
@@ -8,7 +9,6 @@ let context: BrowserContext
 
 BeforeAll (async function () {
     browser = await chromium.launch({headless: false})
-    console.log ('Browser Launched');
 });
 
 Before (async function () {
