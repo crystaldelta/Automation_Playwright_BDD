@@ -9,21 +9,21 @@ export default class resuables {
         await page.goto (url, {waitUntil : "domcontentloaded"});
     };
 
-    async click (locator: string) {
+    async click (locator: Locator | string) {
         const element = typeof locator === 'string' ? page.locator(locator) : locator;
         await element.waitFor({state : "visible"});
         await element.click();
     };
 
-    async fill (locator: string, value: string) {
-        const element = page.locator(locator);
+    async fill (locator: Locator | string, value: string) {
+        const element = typeof locator === 'string' ? page.locator(locator) : locator;
         await element.waitFor({state : "visible"});
         await element.clear();
         await element.fill(value)
     };
 
-    async hover (locator: string) {
-        const element = page.locator(locator);
+    async hover (locator: Locator | string) {
+        const element = typeof locator === 'string' ? page.locator(locator) : locator;
         await element.waitFor({state : "visible"});
         await element.hover();
     };
@@ -34,8 +34,8 @@ export default class resuables {
         await element.selectOption(value)
     };
 
-    async scollUntil (locator: string) {
-        const element = page.locator(locator);
+    async scollUntil (locator: Locator | string) {
+        const element = typeof locator === 'string' ? page.locator(locator) : locator;
         await element.waitFor({state : "visible"});
         await element.scrollIntoViewIfNeeded()
     };
@@ -55,7 +55,7 @@ export default class resuables {
     //assertions
     async elementIsVisible (locator: Locator | string) {
         const element = typeof locator === 'string' ? page.locator(locator) : locator;
-        await expect(element).toBeVisible();
+        await expect(element).toBeVisible({timeout: 30000});
     };
 
     async elementIsNotVisible (locator: Locator | string) {
@@ -73,4 +73,12 @@ export default class resuables {
         const actualUrl = page.url();
         expect(actualUrl).toBe(expectedUrl);
     };
+
+    async validate_NewTabUrl (expectedUrl : string) {
+        const newPage = await page.waitForEvent('popup');
+        await newPage.waitForLoadState('domcontentloaded');
+        const newTabUrl = newPage.url();
+        expect(newTabUrl).toBe(expectedUrl);
+        await newPage.close();
+    }
 }

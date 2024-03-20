@@ -21,5 +21,10 @@ When('the {string} lands on the space dashboard', async function (user) {
 });
 
 When('the {string} validates the space dashboard elements', async function (user) {
-    await dashboardPage.dashboardValidation(user);
+    await dashboardPage.dashboardHeaderValidation(user);
+    await dashboardPage.dashboardFooterElements();
+});
+
+When('the user validates the space dashboard footer links', async function () {
+    await dashboardPage.dashboardFooter_linkValidation();
 });

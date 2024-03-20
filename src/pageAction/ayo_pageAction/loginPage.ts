@@ -1,7 +1,9 @@
 import { Page } from "@playwright/test";
 import { loginCreds as data}  from "../../utils/testData";
 import { loginPage } from "../../pageObject/ayo_pageObject/loginPage";
+import { dashboardPage } from "../../pageObject/ayo_pageObject/dashboardPage";
 import reusables from "../../utils/utility";
+import {logger} from "../../support/logger";
 //=======================================================================================================================
 
 export default class login {
@@ -27,6 +29,7 @@ export default class login {
         await this.utility.elementIsVisible(loginPage.ayo_resetPassword_cancel);
         await this.utility.elementIsVisible(loginPage.ayo_resetModal_close);
         await this.utility.click(loginPage.ayo_resetModal_close);
+        logger.info('Validated the Login page & Forgot password section elements');
     };
 
     async passCredentialsAnd_login(user: string) {
@@ -37,6 +40,8 @@ export default class login {
 
         }
         await this.utility.click(loginPage.ayo_logiBtn);
+        await this.utility.elementIsVisible(dashboardPage.mySpaces());
+        logger.info(`${user} logged in successfully`)
     };
 
 }
