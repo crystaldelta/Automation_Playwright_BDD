@@ -8,8 +8,8 @@ export default class login {
     private utility: reusables;
     constructor(private page: Page) { this.utility = new reusables(page) }
 
-    async navigateToLoginPage(userType: string) {
-        if (userType == "ayo_staffUser") {
+    async navigateToLoginPage(site: string) {
+        if (site == "ayo") {
             await this.utility.goTo(data.ayo_url);
         }
     };
@@ -29,9 +29,13 @@ export default class login {
         await this.utility.click(loginPage.ayo_resetModal_close);
     };
 
-    async passCredentialsAnd_login() {
-        await this.utility.fill(loginPage.ayo_username, data.userName);
+    async passCredentialsAnd_login(user: string) {
+        if (user == 'ayo_staff') {
+        await this.utility.fill(loginPage.ayo_username, data.staff_userName);
         await this.utility.fill(loginPage.ayo_password, data.password);
+        } else {
+
+        }
         await this.utility.click(loginPage.ayo_logiBtn);
     };
 

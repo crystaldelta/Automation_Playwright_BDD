@@ -1,5 +1,5 @@
-export const loginPage = {
 
+export const loginPage = {
     ayo_officialLink: '//div[contains(@class, "header-top-section")]//child::h4[text() ="visit "]//child::a[text()="mentoring.ayo.com.au"]',
     ayo_bannerImage: '//div[contains(@class, "header-banner-image")]//child::img[@class= "header-logo-image" and @alt = "Header logo"]',
     ayo_loginLogoText: '//p[text() = "Login to AYO"]//parent::div//child::div[@class=" login-logo"]',
