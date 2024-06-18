@@ -7,9 +7,11 @@ Given('user is in home page', async function () {
 });
 When('user clicks courses and degree', async function () {
     await page.getByRole('link', { name: 'Courses & degrees', exact: true }).click();
-    await page.getByRole('button', { name: 'Future Skills short courses' }).click();
 });
 Then('user should get navigated to the course catelog page', async function () {
-    await page.getByRole('link', { name: 'Future Skills short course AI' }).click();
-    await page.getByRole('heading', { name: 'AI Programming with Python' }).click();
+    // await page.pause()
+    await page.getByRole('heading', { name: 'Courses & degrees' }).click();
+    await page.getByRole('button', { name: 'Future Skills short courses' }).click();
+    await page.getByRole('link', { name: 'Future Skills short course Sustainability and climate-related financial' }).click();
+    await page.getByRole('heading', { name: 'Sustainability and climate-' }).click();
 });

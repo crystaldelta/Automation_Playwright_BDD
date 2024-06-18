@@ -13,7 +13,31 @@
         "requireModule": [
             "ts-node/register"
         ],
-        "parallel": 2,
+        "format": [
+            "progress-bar",
+            "html:test-results/cucumber-report.html",
+            "json:test-results/cucumber-report.json",
+            "rerun:@rerun.txt"
+        ],
+        "parallel": 1,
+        "retry": 0,
         "trace": ["retain-on-failure"]
+    },
+    "rerun": {
+        "formatOptions": {
+            "snippetInterface": "async-await"
+        },
+        "dryRun": false,
+        "require": [
+            "src/tests/steps/*.ts"
+        ],
+        "requireModule": [
+            "ts-node/register"
+        ],
+        "format": [
+            "html:test-results/cucumber-report.html",
+            "json:test-results/cucumber-report.json",
+            "rerun:@rerun.txt"
+        ]
     }
 }
