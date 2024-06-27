@@ -10,7 +10,7 @@ When('user clicks courses and degree', async function () {
 });
 Then('user should get navigated to the course catelog page', async function () {
     // await page.pause()
-    await page.getByRole('heading', { name: 'Courses & degrees' }).click();
+    await page.getByRole('heading', { name: 'Courses & degrees123' }).click();
     await page.getByRole('button', { name: 'Future Skills short courses' }).click();
     await page.getByRole('link', { name: 'Future Skills short course Sustainability and climate-related financial' }).click();
     await page.getByRole('heading', { name: 'Sustainability and climate-' }).click();
